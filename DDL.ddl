@@ -16,5 +16,13 @@ CREATE TABLE ordenes (
     fecha_orden DATE
 	
 );
+CREATE TABLE history_cliente(
+	id_h_cli int PRIMARY KEY AUTO_INCREMENT,
+    antes varchar(80),
+    despues varchar(80),
+    fecha date,
+    id_cliente int
+);
 
 ALTER TABLE ordenes ADD CONSTRAINT FKCli_Ord FOREIGN KEY (f_cliente) REFERENCES clientes(id_cliente);
+ALTER TABLE history_cliente ADD CONSTRAINT FKCli_H_Cli FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente);
