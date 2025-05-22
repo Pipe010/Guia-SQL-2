@@ -3,12 +3,14 @@ CALL insertclientes('Ana Martínez', 'ana.martinez@example.com', '2019-10-06');
 CALL insertclientes('Luis Pérez', 'luis.perez@example.com', '2025-09-26');
 CALL insertclientes('María López', 'maria.lopez@example.com', '2015-02-07');
 CALL insertclientes('José Rodríguez', 'jose.rodriguez@example.com', '2017-11-20');
+CALL insertclientes('jimmy', 'jose.rodriguez@example.com', '2017-11-20');
 CALL insertordenes(3, '2025-05-20');
 CALL insertordenes(1, '2025-05-19');
 CALL insertordenes(5, '2025-05-18');
 CALL insertordenes(2, '2025-05-17');
-CALL insertordenes(4, '2025-05-16');
-
+CALL insertordenes(8, '2025-05-16');
+CALL updateclientes(5,"Luis","prueba2025@hotmail.com");
+DELETE FROM clientes where id_cliente=1;
 USE `sql2`;
 CREATE  OR REPLACE VIEW `clientes_inscritos` AS
 SELECT nombre, correo, fecha_registro as fecha_del_registro 
